@@ -13,7 +13,7 @@ pipeline {
       stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("zanzornl/hellowhale:${env.BUILD_ID}")
+                    myapp = docker.build("zanzornl/hellowhale:${env.BUILD_ID}").toString()
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                             myapp.push("latest")
-                            myapp.push("${env.BUILD_ID}")
+                            myapp.push("${env.BUILD_ID}").toString()
                     }
                 }
             }
