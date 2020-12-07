@@ -6,7 +6,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git url:'https://github.com/ZaNZoR/hellowhale.git', branch:'master'
+        git url:'https://github.com/ZaNZoR/hellowhale.git/, branch:'master'
       }
     }
     
@@ -41,3 +41,4 @@ pipeline {
   }
 
 }
+
